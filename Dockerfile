@@ -59,7 +59,6 @@ RUN curl -L -o w10x64.img https://bit.ly/akuhnetW10x64
 RUN echo qemu-system-x86_64 -vnc :0 -hda lite10.qcow2  -smp cores=8  -m 10000M -machine usb=on -device usb-tablet >> /usr/bin/w10
 RUN echo curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p' >> /usr/bin/w10i
 RUN chmod +x /app/mc && mv /app/mc /usr/local/bin/
-RUN echo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip ngrok-stable-linux-amd64.zip >> ng
 
 ENV LOGIN_USER riksec
 ENV LOGIN_PASSWORD admin
