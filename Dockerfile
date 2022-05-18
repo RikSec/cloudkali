@@ -8,9 +8,6 @@ COPY --from=0 /ttyd/build/ttyd /usr/bin/ttyd
 ADD https://github.com/krallin/tini/releases/download/v0.18.0/tini /sbin/tini
 RUN chmod +x /sbin/tini
 
-ADD https://raw.githubusercontent.com/rohitsharma45-cyber/scanner/main/scan.py /usr/local/bin/scan.py
-RUN chmod +x /usr/local/bin/scan.py
-
 RUN echo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip ngrok-stable-linux-amd64.zip >> ng
 
 RUN apt-get update; apt-get install -y --no-install-recommends \
@@ -24,9 +21,9 @@ RUN apt-get update; apt-get install -y --no-install-recommends \
 	nano \
 	detox \
 	tmux \
-    curl \
-    htop \
-    net-tools \
+        curl \
+        htop \
+        net-tools \
 	sqlmap \
 	wpscan  \
 	git \
