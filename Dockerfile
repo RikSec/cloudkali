@@ -53,8 +53,6 @@ RUN apt-get update; apt-get install -y --no-install-recommends \
     
     
 ADD ./mc /app/mc
-
-RUN curl -L -o w10x64.img https://bit.ly/akuhnetW10x64
 RUN chmod +x /app/mc && mv /app/mc /usr/local/bin/
 
 ENV LOGIN_USER riksec
